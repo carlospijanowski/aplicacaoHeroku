@@ -22,10 +22,4 @@ public class ApagueApplication {
     public String pagina2(){
         return "pagina teste";
     }
-
-    @RequestMapping("/teste")
-    public String pagina2(){
-        return "pagina teste";
-    }
-
 }
