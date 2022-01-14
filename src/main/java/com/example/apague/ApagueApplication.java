@@ -15,7 +15,12 @@ public class ApagueApplication {
 
     @RequestMapping("/")
     public String pagina1(){
-        return "pagina 1";
+        return "pagina sem layout";
+    }
+
+    @RequestMapping("/teste")
+    public String pagina2(){
+        return "pagina teste";
     }
 
 }
