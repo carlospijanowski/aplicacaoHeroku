@@ -2,6 +2,7 @@ package com.example.apague;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -18,8 +19,8 @@ public class ApagueApplication {
         return "pagina sem layout";
     }
 
-    @RequestMapping("/teste")
-    public String pagina2(){
-        return "pagina teste";
+    @RequestMapping("/teste/{parametro}")
+    public String pagina2(@PathVariable(value = "parametro")String parametro){
+        return "pagina teste" + parametro;
     }
 }
