@@ -16,7 +16,7 @@ public class ApagueApplication {
 
     @RequestMapping("/")
     public String pagina1(){
-        return "pagina sem layout";
+        return "pagina sem layout 2";
     }
 
     @RequestMapping("/teste/{parametro}")
