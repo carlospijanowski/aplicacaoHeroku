@@ -7,9 +7,10 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class MainController {
 
+
     @RequestMapping("/")
     public String pagina1(){
-        return "pagina sem layout 2";
+        return "pagina sem layout no main";
     }
 
     @RequestMapping("/teste/{parametro}")
