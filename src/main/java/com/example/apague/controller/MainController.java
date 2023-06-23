@@ -9,7 +9,9 @@ import org.springframework.web.bind.annotation.RestController;
 public class MainController {
     @GetMapping("/teste")
     public String teste() {
-        return "funfando o GEEEEEEEEEEEET !!!!!!!!!!";
+        return "<html><b><font color=red>fiz esse endPoint retornando apenas uma string" +
+                "</font></b>" +
+                "</html>";
     }
 
 
