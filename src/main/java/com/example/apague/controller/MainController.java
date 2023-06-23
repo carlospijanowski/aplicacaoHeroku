@@ -7,8 +7,6 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping()
 public class MainController {
-
-
     @GetMapping("/teste")
     public String teste() {
         return "funfando o GEEEEEEEEEEEET !!!!!!!!!!";
