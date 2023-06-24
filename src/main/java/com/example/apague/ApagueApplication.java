@@ -8,4 +8,5 @@ public class ApagueApplication {
     public static void main(String[] args) {
         SpringApplication.run(ApagueApplication.class, args);
     }
+
 }
