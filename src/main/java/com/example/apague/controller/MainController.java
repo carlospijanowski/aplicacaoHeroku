@@ -1,5 +1,6 @@
 package com.example.apague.controller;
 
+import com.example.apague.dao.CepDAOImpl;
 import com.example.apague.dao.DespesaDAOImpl;
 import com.example.apague.model.Categoria;
 import com.example.apague.model.Despesa;
@@ -43,8 +44,20 @@ public class MainController {
 
         System.out.println(save.toString());
 
-        return "<html><b><font color=red><font size = 200>fiz esse endPoint retornando apenas uma string" +
-                "</font></b><br><br>"+forObject+"</html>";
+
+        CepDAOImpl cepDAO = new CepDAOImpl();
+        cepDAO.save(forObject);
+
+        String html = """
+                <html>
+                    <b><font color=red><font size = 200>SUCESSO!!!</font></b>
+                    <br>
+                    <br> 
+                    """+forObject+"""
+                </html>
+        """;
+
+        return html;
     }
 
 

@@ -2,6 +2,16 @@ package com.example.apague.model;
 
 public class ObjetoCorreios {
 
+    private Long id;
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
     private String cep;
     private String logradouro;
     private String complemento;
@@ -95,17 +105,17 @@ public class ObjetoCorreios {
 
     @Override
     public String toString() {
-        return "ObjetoCorreios{" +
-                "cep='" + cep + '\'' +
-                ", logradouro='" + logradouro + '\'' +
-                ", complemento='" + complemento + '\'' +
-                ", bairro='" + bairro + '\'' +
-                ", localidade='" + localidade + '\'' +
-                ", uf='" + uf + '\'' +
-                ", ibge='" + ibge + '\'' +
-                ", gia='" + gia + '\'' +
-                ", ddd='" + ddd + '\'' +
-                ", siafi='" + siafi + '\'' +
+        return "{" +
+                "\ncep : '" + cep + '\'' +
+                ",\n logradouro : '" + logradouro + '\'' +
+                ",\n complemento : '" + complemento + '\'' +
+                ",\n bairro : '" + bairro + '\'' +
+                ",\n localidade : '" + localidade + '\'' +
+                ",\n uf : '" + uf + '\'' +
+                ",\n ibge : '" + ibge + '\'' +
+                ",\n gia : '" + gia + '\'' +
+                ",\n ddd : '" + ddd + '\'' +
+                ",\n siafi : '" + siafi + '\'' +
                 '}';
     }
 }
