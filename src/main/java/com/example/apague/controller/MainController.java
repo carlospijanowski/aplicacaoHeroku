@@ -48,14 +48,7 @@ public class MainController {
         CepDAOImpl cepDAO = new CepDAOImpl();
         cepDAO.save(forObject);
 
-        String html = """
-                <html>
-                    <b><font color=red><font size = 200>SUCESSO!!!</font></b>
-                    <br>
-                    <br> 
-                    """+forObject+"""
-                </html>
-        """;
+        String html = "<html><b><font color=red><font size = 200>SUCESSO!!!</font></b><br><br>"+forObject+"</html>";
 
         return html;
     }
