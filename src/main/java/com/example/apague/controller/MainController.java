@@ -1,5 +1,8 @@
 package com.example.apague.controller;
 
+import com.example.apague.dao.DespesaDAOImpl;
+import com.example.apague.model.Categoria;
+import com.example.apague.model.Despesa;
 import com.example.apague.model.ObjetoCorreios;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -8,6 +11,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
+
+import java.time.LocalDate;
 
 @RestController
 @RequestMapping()
@@ -26,6 +31,17 @@ public class MainController {
 //        }
 
         System.out.println(forObject);
+
+        Despesa despesa = new Despesa();
+        despesa.setDescricao("COMIDA NO FRANGO ASSADO");
+        despesa.setCategoria(Categoria.ALIMENTACAO);
+        despesa.setValor(1200);
+        despesa.setData(LocalDate.of(2023,06,22));
+
+        DespesaDAOImpl despesaDAO = new DespesaDAOImpl();
+        Despesa save = despesaDAO.save(despesa);
+
+        System.out.println(save.toString());
 
         return "<html><b><font color=red><font size = 200>fiz esse endPoint retornando apenas uma string" +
                 "</font></b><br><br>"+forObject+"</html>";
