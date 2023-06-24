@@ -21,7 +21,7 @@ public class MainController {
     public String teste(@PathVariable String cep) {
 
         RestTemplate restTemplate = new RestTemplate();
-        Object forObject = restTemplate.getForObject("https://viacep.com.br/ws/"+cep+"/json/", Object.class);
+        ObjetoCorreios forObject = restTemplate.getForObject("https://viacep.com.br/ws/"+cep+"/json/", ObjetoCorreios.class);
 
 //        ObjectMapper objectMapper = new ObjectMapper();
 //        try {
@@ -33,7 +33,7 @@ public class MainController {
         System.out.println(forObject);
 
         Despesa despesa = new Despesa();
-        despesa.setDescricao("COMIDA NO FRANGO ASSADO");
+        despesa.setDescricao(forObject.getLogradouro());
         despesa.setCategoria(Categoria.ALIMENTACAO);
         despesa.setValor(1200);
         despesa.setData(LocalDate.of(2023,06,22));
