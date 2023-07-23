@@ -54,4 +54,30 @@ public class MainController {
     }
 
 
+    @GetMapping("/cep2/{cep}")
+    public ObjetoCorreios teste2(@PathVariable String cep) {
+
+        RestTemplate restTemplate = new RestTemplate();
+        ObjetoCorreios forObject = restTemplate.getForObject("https://viacep.com.br/ws/"+cep+"/json/", ObjetoCorreios.class);
+
+        System.out.println(forObject);
+
+        Despesa despesa = new Despesa();
+        despesa.setDescricao(forObject.getLogradouro());
+        despesa.setCategoria(Categoria.ALIMENTACAO);
+        despesa.setValor(1200);
+        despesa.setData(LocalDate.of(2023,06,22));
+
+        DespesaDAOImpl despesaDAO = new DespesaDAOImpl();
+        Despesa save = despesaDAO.save(despesa);
+
+        System.out.println(save.toString());
+
+
+        CepDAOImpl cepDAO = new CepDAOImpl();
+        cepDAO.save(forObject);
+
+        return forObject;
+    }
+
 }
